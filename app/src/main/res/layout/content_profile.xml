@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.harrricdev.edwin.andelaexercise.ProfileActivity"
+    tools:context="com.harrricdev.edwin.andelaexercise.profiles.ProfileActivity"
     tools:showIn="@layout/activity_profile">
 
     <TextView
@@ -52,6 +52,7 @@
             />
 
         <TextView
+            android:id="@+id/githubUrl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -59,6 +60,15 @@
             android:text="https://github.com/moyheen"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+
+        />
 
 
 

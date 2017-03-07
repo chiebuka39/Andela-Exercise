@@ -2,6 +2,7 @@ package com.harrricdev.edwin.andelaexercise.Main;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.harrricdev.edwin.andelaexercise.Models.Item;
 import com.harrricdev.edwin.andelaexercise.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -47,15 +50,20 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         Item developer = mDevelopers.get(position);
 
         holder.username.setText(developer.getLogin());
-        String url = developer.getUrl();
+        String url = developer.getAvatarUrl();
+        Log.d("AMIN", url);
 
-        Glide
-                .with(mContext)
+        /*Glide
+                .with(mContext.getApplicationContext())
                 .load(url)
                 .centerCrop()
                 .placeholder(R.drawable.profile_place)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .override(100,100)
                 .crossFade()
-                .into(holder.avatar);
+                .into(holder.avatar);*/
+
+        Picasso.with(mContext).load(url).placeholder(R.drawable.profile_place).into(holder.avatar);
     }
 
     @Override
@@ -71,7 +79,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         public MyViewHolder(View itemView) {
             super(itemView);
             avatar = (ImageView) itemView.findViewById(R.id.gravar);
-            username = (TextView) itemView.findViewById(R.id.username);
+            username = (TextView) itemView.findViewById(R.id.list_username);
         }
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.harrricdev.edwin.andelaexercise.ProfileActivity">
+    tools:context="com.harrricdev.edwin.andelaexercise.profiles.ProfileActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/profile_gravatar"
@@ -27,9 +27,9 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/gravar"
+        android:elevation="8dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ebuka"
         app:layout_anchor="@id/profile_gravatar"
         app:layout_anchorGravity="bottom"
         android:layout_centerVertical="true"

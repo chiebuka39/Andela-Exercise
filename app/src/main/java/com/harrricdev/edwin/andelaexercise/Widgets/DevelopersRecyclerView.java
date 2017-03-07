@@ -53,7 +53,7 @@ public class DevelopersRecyclerView extends RecyclerView {
     };
 
     private void toggleViews() {
-        if(getAdapter() != null && !mEmptyViews.isEmpty() && !mNonEmptyViews.isEmpty()){
+        if(getAdapter() != null && (!mEmptyViews.isEmpty() || !mNonEmptyViews.isEmpty())){
             if(getAdapter().getItemCount() == 0){
                 // show all empty views
                 ToolBox.showViews(mEmptyViews);
